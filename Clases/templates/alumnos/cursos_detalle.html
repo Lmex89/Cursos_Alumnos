@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        Clases Detalle
+    </h1>
+    {%if curso%}
+    <h2>
+        Autor id: {{curso.id}}
+    </h2>
+    <h2>
+        Autor Nombre {{curso.nombre}}
+    </h2>
+    <h2>
+        Alumnos : {% for alumno in alumnos%}
+          <li>
+            <a href="/Alumnos/{{alumno.id}}">{{alumno.nombre}}</a>
+        </li>
+         {%endfor %}
+    </h2>
+        {%else%}
+    <h2>
+        No existe ese id
+    </h2>
+    {%endif%}
+</body>
+
+</html>
